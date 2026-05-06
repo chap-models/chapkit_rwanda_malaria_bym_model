@@ -16,7 +16,7 @@ from chapkit.artifact import ArtifactHierarchy
 from chapkit.ml import ShellModelRunner
 
 
-class ChapkitRwandaMalariaBymModelConfig(BaseConfig):
+class RwandaMalariaBymModelConfig(BaseConfig):
     """Configuration for chapkit_rwanda_malaria_bym_model.
 
     The chap_core config_format on the runner writes
@@ -38,7 +38,7 @@ predict_command = (
     "Rscript scripts/predict.R model.rds {historic_file} {future_file} {output_file} config.yml {geo_file}"
 )
 
-runner: ShellModelRunner[ChapkitRwandaMalariaBymModelConfig] = ShellModelRunner(
+runner: ShellModelRunner[RwandaMalariaBymModelConfig] = ShellModelRunner(
     train_command=train_command,
     predict_command=predict_command,
     config_format="chap_core",
@@ -74,7 +74,7 @@ info = MLServiceInfo(
 )
 
 HIERARCHY = ArtifactHierarchy(
-    name="chapkit_rwanda_malaria_bym_model",
+    name="rwanda_malaria_bym_model",
     level_labels={0: "ml_training_workspace", 1: "ml_prediction"},
 )
 
@@ -86,7 +86,7 @@ if DATABASE_URL.startswith("sqlite") and ":///" in DATABASE_URL:
 app = (
     MLServiceBuilder(
         info=info,
-        config_schema=ChapkitRwandaMalariaBymModelConfig,
+        config_schema=RwandaMalariaBymModelConfig,
         hierarchy=HIERARCHY,
         runner=runner,
         database_url=DATABASE_URL,
