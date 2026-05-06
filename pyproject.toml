@@ -1,0 +1,27 @@
+[project]
+name = "chapkit_rwanda_malaria_bym_model"
+version = "0.1.0"
+description = "Rwanda Malaria BYM model (R-INLA), packaged as a chapkit shell-r service."
+requires-python = ">=3.13"
+dependencies = [
+    "chapkit>=0.24.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.10",
+    "uvicorn[standard]>=0.30.0",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+select = ["E", "W", "F", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false

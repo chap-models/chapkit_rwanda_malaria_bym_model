@@ -1,0 +1,30 @@
+services:
+  chapkit_rwanda_malaria_bym_model:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # chapkit-r-inla is amd64-only (INLA x86_64); runs under Rosetta on Apple Silicon.
+    platform: linux/amd64
+    # image: ghcr.io/chap-models/chapkit_rwanda_malaria_bym_model:latest
+    # pull_policy: always
+    # platform: linux/amd64
+    ports:
+      # 9091 keeps the host port distinct from chapkit_minimalist_example_r (9090),
+      # so both can run simultaneously on a developer box.
+      - "9091:8000"
+    volumes:
+      - ck_chapkit_rwanda_malaria_bym_model_data:/work/data
+    environment:
+      LOG_FORMAT: json
+      LOG_LEVEL: INFO
+      WORKERS: 1
+      # CHAPKIT_TEMP_DIR: /tmp
+      # SERVICEKIT_ORCHESTRATOR_URL: http://chap:8000/v2/services/$$register
+      # SERVICEKIT_REGISTRATION_KEY: ${SERVICEKIT_REGISTRATION_KEY:-}
+    restart: unless-stopped
+    # depends_on:
+    #   chap:
+    #     condition: service_healthy
+
+volumes:
+  ck_chapkit_rwanda_malaria_bym_model_data:
