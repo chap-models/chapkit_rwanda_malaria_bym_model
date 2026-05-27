@@ -79,7 +79,7 @@ wheels = [
 
 [[package]]
 name = "chapkit"
-version = "0.24.0"
+version = "0.27.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "geojson-pydantic" },
@@ -88,9 +88,9 @@ dependencies = [
     { name = "servicekit" },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/93/53/e7418f4cf082189a6c53e1073651f286770fd47b1f8956de7a0aaf9d0132/chapkit-0.24.0.tar.gz", hash = "sha256:2e7dd29f53d5db88bc2d458e48beb42ca9f65c2e81221693d8cbfbf8b31e2083", size = 103065, upload-time = "2026-04-29T10:17:55.214Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/00/8d/e0ac2682ff655f5037941302970d3d0f57c69e453d278484b73fd447f4b9/chapkit-0.27.0.tar.gz", hash = "sha256:9b22bd4652161d5c70e9d8076ffabcce724ed8d10a3bb84c04b0f854b061c9c7", size = 104490, upload-time = "2026-05-27T12:38:57.748Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3c/59/2dcc26db3d87dd6afa3fb796cacc0fc268dc380d1bf0be7ab2ad8c0998e7/chapkit-0.24.0-py3-none-any.whl", hash = "sha256:3700af2670eb07be4cb7d10c4b5b9e2d454e6743b0ab08b9ba81439deb7baa5b", size = 132977, upload-time = "2026-04-29T10:17:53.566Z" },
+    { url = "https://files.pythonhosted.org/packages/30/dd/76a1ba5f0c251c22bde8729197d0f04b99c450ed30ed51c0cfd14282c2dd/chapkit-0.27.0-py3-none-any.whl", hash = "sha256:14a435b4c569b3ab32d9142bae70d8cabf803347f1bfcf138bbcb2955e65c435", size = 134397, upload-time = "2026-05-27T12:38:56.217Z" },
 ]
 
 [[package]]
@@ -108,7 +108,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "chapkit", specifier = ">=0.24.0" }]
+requires-dist = [{ name = "chapkit", specifier = ">=0.27.0" }]
 
 [package.metadata.requires-dev]
 dev = [
@@ -161,7 +161,7 @@ wheels = [
 
 [[package]]
 name = "fastapi"
-version = "0.136.1"
+version = "0.136.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "annotated-doc" },
@@ -170,9 +170,9 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "typing-inspection" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5d/45/c130091c2dfa061bbfe3150f2a5091ef1adf149f2a8d2ae769ecaf6e99a2/fastapi-0.136.1.tar.gz", hash = "sha256:7af665ad7acfa0a3baf8983d393b6b471b9da10ede59c60045f49fbc89a0fa7f", size = 397448, upload-time = "2026-04-23T16:49:44.046Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/81/2d/ff8d91d7b564d464629a0fd50a4489c97fcb836ac230bf3a7269232a9b1f/fastapi-0.136.3.tar.gz", hash = "sha256:e487fae93ad408e6f47641ee4dfe389864fd7bec92e547ea8498fc13f43e83ab", size = 396410, upload-time = "2026-05-23T18:53:15.192Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5a/ff/2e4eca3ade2c22fe1dea7043b8ee9dabe47753349eb1b56a202de8af6349/fastapi-0.136.1-py3-none-any.whl", hash = "sha256:a6e9d7eeada96c93a4d69cb03836b44fa34e2854accb7244a1ece36cd4781c3f", size = 117683, upload-time = "2026-04-23T16:49:42.437Z" },
+    { url = "https://files.pythonhosted.org/packages/e0/82/45359b62a067409bd929ae8a56b8ed13e5a8c8a61194b3c236920999ab83/fastapi-0.136.3-py3-none-any.whl", hash = "sha256:3d2a69bdf04b7e9f3afa292c3bc7a98816bbfafa10bc9b45f3f3700d2f761620", size = 117481, upload-time = "2026-05-23T18:53:16.924Z" },
 ]
 
 [package.optional-dependencies]
@@ -960,7 +960,7 @@ wheels = [
 
 [[package]]
 name = "servicekit"
-version = "0.10.0"
+version = "0.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiosqlite" },
@@ -975,11 +975,12 @@ dependencies = [
     { name = "pydantic" },
     { name = "python-ulid" },
     { name = "sqlalchemy", extra = ["asyncio"] },
+    { name = "starlette" },
     { name = "structlog" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ee/2b/2d930fd244a08ca692f1ca3b46b28693742932aef9e17bcaf932a85ebb52/servicekit-0.10.0.tar.gz", hash = "sha256:bb8ea27a8e33d09d08537446eba678f1711a5be4950b6bbf0abc1a381eec5202", size = 43061, upload-time = "2026-04-13T11:28:49.245Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a7/12/7ce7186b267b866043dcbff6161f0fdc400c999d99763afb179d6bbccc7f/servicekit-0.12.0.tar.gz", hash = "sha256:8e367b0900f5f18f921251b4de30d26e346a2c53d576b7a5c6d3534c8f68b39c", size = 42342, upload-time = "2026-05-27T12:33:52.812Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9a/d3/e61c9e0523844d3460db67cabcc5bace402fcd25822d291436d52527882c/servicekit-0.10.0-py3-none-any.whl", hash = "sha256:e2e5eb40b41b92b4323a56c2a4107d80f94916d10523b6bf114c64c53501672d", size = 55336, upload-time = "2026-04-13T11:28:47.897Z" },
+    { url = "https://files.pythonhosted.org/packages/02/30/2f704c69e172fa42691de82284ab458bc1f15824bd8a1831811494f6451d/servicekit-0.12.0-py3-none-any.whl", hash = "sha256:18f7348da511e028da530d27f0cb94cc3752f4d3531462ec53cbada80d910194", size = 54192, upload-time = "2026-05-27T12:33:51.564Z" },
 ]
 
 [[package]]
@@ -1037,14 +1038,14 @@ asyncio = [
 
 [[package]]
 name = "starlette"
-version = "1.0.0"
+version = "1.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyio" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/81/69/17425771797c36cded50b7fe44e850315d039f28b15901ab44839e70b593/starlette-1.0.0.tar.gz", hash = "sha256:6a4beaf1f81bb472fd19ea9b918b50dc3a77a6f2e190a12954b25e6ed5eea149", size = 2655289, upload-time = "2026-03-22T18:29:46.779Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/95/66/4d20cdf39a8d6a51e663b7038e3b828ff211d3891a43a713fe7e4643f3a8/starlette-1.1.0.tar.gz", hash = "sha256:e83c7fe0ddecd8719c5b840080325aec0260acec86e9832899e377b91d65e90f", size = 2660060, upload-time = "2026-05-23T16:55:41.376Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0b/c9/584bc9651441b4ba60cc4d557d8a547b5aff901af35bda3a4ee30c819b82/starlette-1.0.0-py3-none-any.whl", hash = "sha256:d3ec55e0bb321692d275455ddfd3df75fff145d009685eb40dc91fc66b03d38b", size = 72651, upload-time = "2026-03-22T18:29:45.111Z" },
+    { url = "https://files.pythonhosted.org/packages/93/79/920b8e0a8b20f793e8d64855095cb8febabf6175b8550b6f7a547d813891/starlette-1.1.0-py3-none-any.whl", hash = "sha256:7f0dfd38e428aad5cb6f9f667f0ca1d2d8ca3f3385dccac8305f79ec98458382", size = 72899, upload-time = "2026-05-23T16:55:39.201Z" },
 ]
 
 [[package]]
