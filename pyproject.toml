@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Rwanda Malaria BYM model (R-INLA), packaged as a chapkit shell-r service."
 requires-python = ">=3.13"
 dependencies = [
-    "chapkit>=0.27.0",
+    "chapkit>=1.0.0",
 ]
 
 [dependency-groups]
