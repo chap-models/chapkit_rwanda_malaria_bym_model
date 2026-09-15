@@ -3,6 +3,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      # Bakes the commit into the image: GIT_REVISION=$(git rev-parse HEAD) docker compose up --build
+      args:
+        GIT_REVISION: ${GIT_REVISION:-}
     # chapkit-r-inla is amd64-only (INLA x86_64); runs under Rosetta on Apple Silicon.
     platform: linux/amd64
     # image: ghcr.io/chap-models/chapkit_rwanda_malaria_bym_model:latest
