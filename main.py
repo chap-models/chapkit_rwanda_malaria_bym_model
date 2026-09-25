@@ -47,7 +47,7 @@ runner: ShellModelRunner[RwandaMalariaBymModelConfig] = ShellModelRunner(
 info = MLServiceInfo(
     id="chapkit-rwanda-malaria-bym-model",
     display_name="Rwanda Malaria BYM Model",
-    version="0.1.0",
+    version="0.1.1",
     description=(
         "Spatio-temporal Bayesian model for malaria incidence in Rwanda at the sector "
         "(ADM3) level: BYM spatial effects, RW1 temporal effects, and IID space-time "
