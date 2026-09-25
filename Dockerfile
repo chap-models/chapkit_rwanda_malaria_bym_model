@@ -6,7 +6,12 @@
 ARG BASE_PLATFORM=linux/amd64
 FROM --platform=${BASE_PLATFORM} ghcr.io/dhis2-chap/chapkit-r-inla:latest
 
+# Build steps run as root; the service runs as the unprivileged chapkit user
+# (uid/gid 1000). Newer chapkit base images ship the user, older ones do not,
+# so create it only when missing.
 USER root
+RUN id -u chapkit >/dev/null 2>&1 \
+    || (groupadd --gid 1000 chapkit && useradd --uid 1000 --gid 1000 --no-create-home --shell /usr/sbin/nologin chapkit)
 
 WORKDIR /work
 COPY pyproject.toml uv.lock ./
@@ -21,6 +26,20 @@ ENV GIT_REVISION=${GIT_REVISION}
 
 COPY main.py ./
 COPY scripts/ ./scripts/
+
+# Writable paths at runtime are /work/data (the SQLite database, a volume in
+# compose.yml) and /tmp, where chapkit unpacks its ML workspaces and R keeps
+# its tempdir: predict.R writes its .graph file, the predictions CSV and
+# model.rds there. Everything else stays read-only.
+RUN mkdir -p /work/data && chown -R chapkit:chapkit /work/data
+
+# The chapkit user has no home directory, so point HOME and the cache dirs at
+# /tmp; R wants a writable home at startup, as do the Python-side caches.
+ENV HOME=/tmp \
+    MPLCONFIGDIR=/tmp \
+    XDG_CACHE_HOME=/tmp/.cache
+
+USER chapkit
 
 EXPOSE 8000
 
