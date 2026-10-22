@@ -46,10 +46,10 @@ full train -> predict cycle), and tears the container down.
   adjacency graph built at predict-time from the supplied polygons.
 - **Temporal**: RW1 over month-year time index.
 - **Space-time interaction**: IID over (sector x time).
-- **Covariates**: lagged climate variables (configurable depth, default 2).
-- **Required covariates**: population, rainfall, mean_temperature,
-  mean_relative_humidity. Free additional continuous covariates are accepted
-  via the chap-core config.
+- **Covariates**: lag 1 and lag 2 of each climate covariate.
+- **Required covariates**: population (the offset) and rainfall,
+  mean_temperature and mean_relative_humidity, which are always lagged.
+  Free additional continuous covariates are accepted via the chap-core config.
 
 ## Configuration
 
@@ -60,11 +60,11 @@ workspace at predict-time:
 | -------------------- | ------- | ---------------------------------------------------------- |
 | `prediction_periods` | `3`     | chap-core expects this on every chapkit Config.            |
 
-`additional_continuous_covariates` (one per climate covariate the model
-should use as a lagged predictor) is honoured automatically: the chap_core
-config_format writes it into `config.yml`, and `scripts/predict.R` reads
-it via `parse_model_configuration()` and builds lag1/lag2 features for
-each one. Posterior sample count is fixed at 1000 (matching the upstream
+`additional_continuous_covariates` (climate covariates to use as lagged
+predictors on top of the required ones) is honoured automatically: the
+chap_core config_format writes it into `config.yml`, and `scripts/predict.R`
+reads it via `parse_model_configuration()` and builds lag1/lag2 features for
+each one and for each required climate covariate. Posterior sample count is fixed at 1000 (matching the upstream
 Kigali source); change it in `scripts/predict.R` if you need a different
 draw count.
 
