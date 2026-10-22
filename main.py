@@ -47,7 +47,7 @@ runner: ShellModelRunner[RwandaMalariaBymModelConfig] = ShellModelRunner(
 info = MLServiceInfo(
     id="chapkit-rwanda-malaria-bym-model",
     display_name="Rwanda Malaria BYM Model",
-    version="0.1.4",
+    version="0.1.5",
     description=(
         "Spatio-temporal Bayesian model for malaria incidence in Rwanda at the sector "
         "(ADM3) level: BYM spatial effects, RW1 temporal effects, and IID space-time "
@@ -68,7 +68,7 @@ info = MLServiceInfo(
     period_type=PeriodType.monthly,
     min_prediction_periods=1,
     max_prediction_periods=24,
-    required_covariates=["population", "rainfall", "mean_temperature", "relative_humidity"],
+    required_covariates=["population", "rainfall", "mean_temperature", "mean_relative_humidity"],
     allow_free_additional_continuous_covariates=True,
     requires_geo=True,
 )

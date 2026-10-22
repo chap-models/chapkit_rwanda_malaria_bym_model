@@ -48,7 +48,7 @@ full train -> predict cycle), and tears the container down.
 - **Space-time interaction**: IID over (sector x time).
 - **Covariates**: lagged climate variables (configurable depth, default 2).
 - **Required covariates**: population, rainfall, mean_temperature,
-  relative_humidity. Free additional continuous covariates are accepted
+  mean_relative_humidity. Free additional continuous covariates are accepted
   via the chap-core config.
 
 ## Configuration
