@@ -1,6 +1,6 @@
 [project]
 name = "chapkit_rwanda_malaria_bym_model"
-version = "0.1.0"
+version = "0.1.6"
 description = "Rwanda Malaria BYM model (R-INLA), packaged as a chapkit shell-r service."
 requires-python = ">=3.13"
 dependencies = [
