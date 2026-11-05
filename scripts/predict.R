@@ -43,17 +43,21 @@ parse_model_configuration <- function(file_path) {
   )
 }
 
+# The climate covariates main.py declares as required. chap always supplies them, so
+# they are always lagged; a configuration's additional_continuous_covariates adds more.
+REQUIRED_CLIMATE_COVARIATES <- c("rainfall", "mean_temperature", "mean_relative_humidity")
+
 # ---------------------------------------------------------------------------
 # Main predict function
 # ---------------------------------------------------------------------------
 predict_chap <- function(model_fn, hist_fn, future_fn, preds_fn, config_fn, polygons_fn) {
 
   # --- Parse config ---
-  covariate_names <- character()
+  covariate_names <- REQUIRED_CLIMATE_COVARIATES
   if (config_fn != "" && file.exists(config_fn)) {
     cat("Loading model configuration from:", config_fn, "\n")
     config <- parse_model_configuration(config_fn)
-    covariate_names <- config$additional_continuous_covariates
+    covariate_names <- union(covariate_names, config$additional_continuous_covariates)
   }
   cat("Climate covariates:", if (length(covariate_names) == 0) "(none)" else paste(covariate_names, collapse = ", "), "\n")
 
