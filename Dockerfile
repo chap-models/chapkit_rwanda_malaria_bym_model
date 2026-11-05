@@ -4,7 +4,7 @@
 # The image is amd64-only (INLA ships x86_64 binaries only), so the FROM line
 # pins linux/amd64 via a build ARG; on Apple Silicon this runs under Rosetta.
 ARG BASE_PLATFORM=linux/amd64
-FROM --platform=${BASE_PLATFORM} ghcr.io/dhis2-chap/chapkit-r-inla:latest
+FROM --platform=${BASE_PLATFORM} ghcr.io/dhis2-chap/chapkit-r-inla:latest@sha256:71ccd15298303d05da310b48450453c3d7be4ee1ad3fede986170473745bdb0e
 
 # Build steps run as root; the service runs as the unprivileged chapkit user
 # (uid/gid 1000). Newer chapkit base images ship the user, older ones do not,
